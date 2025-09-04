@@ -67,7 +67,16 @@ namespace Atos_Task_1
                 else if (choice == 4)
                 {
                     TakeTwoNumbers(ref a, ref b);
-                    decimal ans = calculator.Apply(new Division(logger), a, b);
+
+                    try
+                    {
+                        decimal ans = calculator.Apply(new Division(logger), a, b);
+                    }
+                    catch (DivideByZeroException ex)
+                    {
+                        Console.WriteLine($"Error : {ex.Message}");
+                    }
+
                     Console.WriteLine(logger.Logs.LastOrDefault());
                 }
                 else if (choice == 5)
