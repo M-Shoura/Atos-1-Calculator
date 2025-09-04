@@ -71,13 +71,12 @@ namespace Atos_Task_1
                     try
                     {
                         decimal ans = calculator.Apply(new Division(logger), a, b);
+                        Console.WriteLine(logger.Logs.LastOrDefault());
                     }
                     catch (DivideByZeroException ex)
                     {
                         Console.WriteLine($"Error : {ex.Message}");
-                    }
-
-                    Console.WriteLine(logger.Logs.LastOrDefault());
+                    }   
                 }
                 else if (choice == 5)
                 {
